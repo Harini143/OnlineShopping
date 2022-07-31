@@ -1,0 +1,151 @@
+<app-carousel></app-carousel>
+
+<!-- feature ads -->
+<div class="features-ads bg-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="single-features-ads first">
+          <img src="assets/free-delivery.png" alt="" />
+          <h4>Free shipping</h4>
+          <p>
+            Free Shipping starts now! No minimums. No coupon required.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="single-features-ads second">
+          <img src="assets/money-back.png" alt="" />
+          <h4>100% Money back</h4>
+          <p>
+            Get the Money Back Guarantee. Feel free to buy the product.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="single-features-ads">
+          <img src="assets/customer-service.png" alt="" />
+          <h4>Online support 24/7</h4>
+          <p>
+            Our online support service are availablle for 24/7 hours for
+            customers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- dispaly Category  -->
+<div class="container-fluid py-4">
+  <div class="container py-3">
+    <h3 class="mb-4"><strong>All Categories</strong></h3>
+    <div class="row">
+      <div
+        class="setcursor col-sm-3 p-3 bg-white border"
+        *ngFor="let c of categories"
+        (click)="showCategoryItem(c)"
+      >
+        <h4 class="text-capitalize">
+          <i class="fa fa-gg-circle" aria-hidden="true"></i>
+          {{ c.categoryName }}
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Diplay category end -->
+
+<!-- ads start -->
+<div class="">
+  <img
+    style="max-height: 400px; max-width: 100%;"
+    src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/2019/PC/Storage/Sept/Components_1500x300._CB448007999_.jpg"
+    alt=""
+  />
+</div>
+<!-- ads end -->
+
+<!-- Popular products -->
+<div class="container py-4">
+  <h3 class="py-3"><strong>Popular Men Shirt</strong></h3>
+  <div class="row justify-content-between">
+    <!-- card start -->
+    <div
+      class="setcursor col-lg-3 col-md-4 col-sm-6 p-2"
+      *ngFor="let p of products | slice: 0:4"
+      (click)="showProductDetails(p.productId)"
+    >
+      <div class="card box">
+        <img
+          class="card-img-top card-img"
+          src="{{ p.imageUrl }}"
+          alt="Card image cap"
+        />
+        <div class="px-3 mt-2">
+          <h5 class="m-0">{{ p.productName }}</h5>
+          <p class="badge badge-warning mb-0">{{ p.brandName }}</p>
+          <p class="d-inline-block ml-2 mb-0 badge badge-info">
+            {{ p.category.categoryName }}
+          </p>
+          <div class="rating">
+            <p class="py-2 m-0">
+              <i class="fa fa-star text-warning" aria-hidden="true"></i>
+              {{ p.overAllRating > 0 ? p.overAllRating : "N.A" }}/5
+            </p>
+          </div>
+          <h4 class="price-new text-danger">Rs. {{ p.price }}</h4>
+        </div>
+      </div>
+    </div>
+    <!-- card end -->
+  </div>
+</div>
+<!-- pouplar product end -->
+
+<!-- ads start -->
+<div class="">
+  <img
+    style="max-height: 400px; max-width: 100%;"
+    src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2020/4/24/2fc9ef53-0aab-49a7-869a-3a93e9505e3d1587726261377-Desktop-Green--1-.jpg"
+    alt=""
+  />
+</div>
+<!-- ads end -->
+
+<!-- Electronic products -->
+<div class="container pb-4 mt-4">
+  <h3 class="py-3"><strong>Best Selling Women Shirts</strong></h3>
+  <div class="row justify-content-between">
+    <!-- card start -->
+    <div
+      class="col-lg-3 col-md-4 col-sm-6 p-2"
+      *ngFor="let p of womenproducts | slice: 0:4"
+      (click)="showProductDetails(p.productId)"
+    >
+      <div class="card box">
+        <img
+          class="card-img-top card-img"
+          src="{{ p.imageUrl }}"
+          alt="Card image cap"
+        />
+        <div class="px-3 mt-2">
+          <h5 class="m-0">{{ p.productName }}</h5>
+          <p class="badge badge-warning mb-0">{{ p.brandName }}</p>
+          <p class="d-inline-block ml-2 mb-0 badge badge-info">
+            {{ p.category.categoryName }}
+          </p>
+          <div class="rating">
+            <p class="py-2 m-0">
+              <i class="fa fa-star text-warning" aria-hidden="true"></i>
+              {{ p.overAllRating > 0 ? p.overAllRating : "N.A" }}/5
+            </p>
+          </div>
+          <h4 class="price-new text-danger">Rs. {{ p.price }}</h4>
+        </div>
+      </div>
+    </div>
+    <!-- card end -->
+  </div>
+</div>
+<!-- pouplar product end -->

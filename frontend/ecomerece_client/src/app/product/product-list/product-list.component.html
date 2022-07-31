@@ -1,0 +1,33 @@
+<div class="container p-4 mt-3 bg-white">
+  <h4 class="mb-4">
+    Showing result for <strong>{{ query }}</strong>
+  </h4>
+  <div class="alert alert-info" *ngIf="message">{{ message }}</div>
+  <div class="row">
+    <!-- card start -->
+    <div
+      class="col-lg-3 col-md-4 col-sm-6 p-2"
+      *ngFor="let p of products"
+      (click)="showProductDetails(p.productId)"
+    >
+      <div class="card box"> 
+        <img class="card-img-top" src="https://www.bing.com/th?id=OIP.92DcXdXp_IwBaqV-FXtysAHaJ3&w=216&h=288&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2" alt="Card image cap" />
+        <div class="px-3 mt-2">
+          <h5 class="m-0">{{ p.productName }}</h5>
+          <p class="badge badge-warning mb-0">{{ p.brandName }}</p>
+          <p class="d-inline-block ml-2 mb-0 badge badge-info">
+            {{ p.category.categoryName }}
+          </p>
+          <div class="rating">
+            <p class="py-2 m-0">
+              <i class="fa fa-star text-warning" aria-hidden="true"></i>
+              {{ p.overAllRating > 0 ? p.overAllRating : "N.A" }}/5
+            </p>
+          </div>
+          <h4 class="price-new text-danger">Rs. {{ p.price }}</h4>
+        </div>
+      </div>
+    </div>
+    <!-- card end -->
+  </div>
+</div>
